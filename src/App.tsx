@@ -1,8 +1,14 @@
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+
+const queryClient = new QueryClient();
+
 function App() {
   return (
-    <div className="">
+    <QueryClientProvider client={queryClient}>
       <h1 className="text-3xl font-bold underline">Anime app</h1>
-    </div>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   );
 }
 
