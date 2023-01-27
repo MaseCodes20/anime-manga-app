@@ -1,4 +1,4 @@
-import { Anime } from "../types/animeType";
+import { Anime } from "../../types/animeType";
 
 interface IAnimeCard {
   anime: Anime;

@@ -1,3 +1,5 @@
+import { Genre, Images, Theme, Title } from "./types";
+
 export type Anime = {
   mal_id: number;
   url: string;
@@ -27,17 +29,6 @@ export type Anime = {
   demographics: Demographic[];
 };
 
-type Images = {
-  jpg: Image;
-  webp: Image;
-};
-
-type Image = {
-  image_url: string;
-  small_image_url: string;
-  large_image_url: string;
-};
-
 type Trailer = {
   youtube_id: string;
   url: string;
@@ -51,11 +42,6 @@ type TrailerImages = {
   medium_image_url: string;
   large_image_url: string;
   maximum_image_url: string;
-};
-
-type Title = {
-  type: string;
-  title: string;
 };
 
 type Aired = {
@@ -86,20 +72,6 @@ type Licensor = {
 };
 
 type Studio = {
-  mal_id: number;
-  type: string;
-  name: string;
-  url: string;
-};
-
-type Genre = {
-  mal_id: number;
-  type: string;
-  name: string;
-  url: string;
-};
-
-type Theme = {
   mal_id: number;
   type: string;
   name: string;

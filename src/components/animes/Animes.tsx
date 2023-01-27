@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useQuery } from "react-query";
-import { fetchAnimes } from "../api/anime";
-import { Anime } from "../types/animeType";
+import { fetchAnimes } from "../../api/anime";
+import { Anime } from "../../types/animeType";
 import AnimeCard from "./AnimeCard";
 import Marquee from "react-fast-marquee";
 

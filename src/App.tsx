@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-import Animes from "./components/Animes";
+import Animes from "./components/animes/Animes";
 
 const queryClient = new QueryClient();
 
