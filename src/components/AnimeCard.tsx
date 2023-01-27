@@ -5,9 +5,9 @@ interface IAnimeCard {
 }
 
 const AnimeCard = ({ anime }: IAnimeCard) => {
-  const { images, title, rank, genres } = anime;
+  const { images, title } = anime;
   return (
-    <div className="bg-blue-300/20 p-2 rounded-md shadow-md">
+    <div className="mr-2 max-w-[200px]">
       <p className="truncate">{title}</p>
       <div className="relative">
         <img
@@ -15,17 +15,7 @@ const AnimeCard = ({ anime }: IAnimeCard) => {
           className="h-[248px] w-[200px] mx-auto"
           alt={title}
         />
-
-        <p className="absolute bottom-0 right-0 mb-1 mr-1 bg-pink-500 rounded-full p-2">
-          {rank}
-        </p>
       </div>
-
-      {genres.map((genre) => (
-        <div key={genre.mal_id}>
-          <p>{genre.name}</p>
-        </div>
-      ))}
     </div>
   );
 };
