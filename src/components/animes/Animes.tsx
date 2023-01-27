@@ -9,7 +9,7 @@ const Animes: FC = () => {
   const { data: animes } = useQuery("animes", fetchAnimes);
 
   return (
-    <Marquee gradient={false} pauseOnHover={true}>
+    <Marquee gradient={false} pauseOnHover={true} speed={10}>
       {animes?.data
         .sort((a: Anime, b: Anime) => a.rank - b.rank)
         .map((anime: Anime) => (

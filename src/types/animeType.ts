@@ -1,4 +1,4 @@
-import { Genre, Images, Theme, Title } from "./types";
+import { Demographic, Genre, Images, Theme, Title } from "./types";
 
 export type Anime = {
   mal_id: number;
@@ -72,13 +72,6 @@ type Licensor = {
 };
 
 type Studio = {
-  mal_id: number;
-  type: string;
-  name: string;
-  url: string;
-};
-
-type Demographic = {
   mal_id: number;
   type: string;
   name: string;
