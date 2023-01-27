@@ -21,3 +21,10 @@ export const fetchMangas = async () => {
 
   return response.data;
 };
+
+// Query data
+export const fetchAnimesByName = async (search: string) => {
+  const response = await axios.get(`${animesBaseURL}?letter=${search}`);
+
+  return response.data;
+};
