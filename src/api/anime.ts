@@ -15,3 +15,9 @@ export const fetchGenres = async () => {
 
   return repsonse.data;
 };
+
+export const fetchMangas = async () => {
+  const response = await axios.get(mangasBaseURL);
+
+  return response.data;
+};
