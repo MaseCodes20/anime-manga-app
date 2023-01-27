@@ -8,10 +8,12 @@ const Animes: FC = () => {
   const { data: animes } = useQuery("animes", fetchAnimes);
 
   return (
-    <div className="grid grid-cols-8 gap-3">
-      {animes.data.map((anime: Anime) => (
-        <AnimeCard key={anime.mal_id} anime={anime} />
-      ))}
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 m-3">
+      {animes?.data
+        .sort((a: Anime, b: Anime) => a.rank - b.rank)
+        .map((anime: Anime) => (
+          <AnimeCard key={anime.mal_id} anime={anime} />
+        ))}
     </div>
   );
 };

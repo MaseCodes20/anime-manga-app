@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { Anime } from "../types/animeType";
 
 interface IAnimeCard {
@@ -13,7 +12,7 @@ const AnimeCard = ({ anime }: IAnimeCard) => {
       <div className="relative">
         <img
           src={images.jpg.large_image_url}
-          className="h-[248px] w-[200px]"
+          className="h-[248px] w-[200px] mx-auto"
           alt={title}
         />
 
