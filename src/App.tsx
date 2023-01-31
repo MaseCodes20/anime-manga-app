@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Root from "./Pages/Root";
 import Home from "./Pages/Home";
-import Anime, { animeLoader } from "./Pages/Anime";
+import AnimePage, { animeLoader } from "./Pages/AnimePage";
 
 const queryClient = new QueryClient();
 
@@ -19,7 +19,7 @@ function App() {
         <Route index element={<Home />} />
         <Route
           path="anime/:animeId"
-          element={<Anime />}
+          element={<AnimePage />}
           loader={({ params }) => animeLoader(params.animeId as string)}
         />
       </Route>
