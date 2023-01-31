@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Anime } from "../types/animeType";
 
 const animesBaseURL: string = "https://api.jikan.moe/v4/anime";
 const mangasBaseURL: string = "https://api.jikan.moe/v4/manga";
@@ -27,7 +26,7 @@ export const fetchMangas = async () => {
 export const fetchAnimesByName = async (search: string) => {
   const response = await axios.get(`${animesBaseURL}?letter=${search}`);
 
-  return response.data;
+  return response.data.data;
 };
 
 export const fetchAnimeById = async (id: string) => {

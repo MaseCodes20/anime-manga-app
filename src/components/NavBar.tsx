@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <div className="sticky h-[35px]">
+    <div className="">
       <Link to="/">Home</Link>
     </div>
   );
