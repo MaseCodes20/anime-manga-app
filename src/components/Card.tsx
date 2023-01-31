@@ -10,7 +10,6 @@ interface ICard {
 const Card = ({ content, contentType }: ICard) => {
   const { images, title, mal_id, type } = content;
 
-  console.table(contentType, type);
   return (
     <div className="mr-2 max-w-[100px]">
       <p className="truncate">{title}</p>

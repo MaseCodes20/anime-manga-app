@@ -10,6 +10,7 @@ const MangaPage = () => {
     fetchMangaById(mangaId)
   );
 
+  console.log(manga.type);
   return (
     <div className="flex items-center justify-center h-[calc(100vh-35px)]">
       {isSuccess && <ContentCard content={manga} />}

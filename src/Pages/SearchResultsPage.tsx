@@ -11,12 +11,11 @@ const SearchResultsPage = () => {
   const { data: contents, isSuccess } = useQuery("searchResults", () =>
     fetchAnimesByName(serachTerm)
   );
-
   return (
     <div className="grid grid-cols-4 gap-3">
       {isSuccess &&
         contents.map((content: Anime | Manga) => {
-          const contentType = content?.type === "TV" ? "anime" : "manga";
+          const contentType = content?.type !== "Manga" ? "anime" : "manga";
           return (
             <Card
               key={content.mal_id}

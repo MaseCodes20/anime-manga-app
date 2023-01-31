@@ -46,7 +46,7 @@ const ContentCard = ({ content }: IContentCard) => {
     published,
   } = content;
 
-  const releaseYear = year ?? new Date(published.from).getFullYear();
+  const releaseYear = year ?? new Date(published?.from).getFullYear();
 
   return (
     <div className="flex items-center justify-between w-full bg-gray-200 rounded-md p-5 mx-5">
