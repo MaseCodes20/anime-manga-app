@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import { fetchMangas } from "../../api/anime";
 import Marquee from "react-fast-marquee";
-import { Manga } from "../../types/mangType";
+import { Manga } from "../../types/mangaType";
 import Card from "../Card";
 import Title from "../Title";
 
@@ -17,7 +17,7 @@ const Mangas = () => {
         speed={10}
       >
         {mangas?.data.map((manga: Manga) => (
-          <Card key={manga.mal_id} content={manga} />
+          <Card key={manga.mal_id} content={manga} contentType="manga" />
         ))}
       </Marquee>
     </div>

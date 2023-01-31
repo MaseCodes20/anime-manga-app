@@ -16,7 +16,7 @@ const Animes: FC = () => {
         {animes?.data
           .sort((a: Anime, b: Anime) => a.rank - b.rank)
           .map((anime: Anime) => (
-            <Card key={anime.mal_id} content={anime} />
+            <Card key={anime.mal_id} content={anime} contentType="anime" />
           ))}
       </Marquee>
     </div>

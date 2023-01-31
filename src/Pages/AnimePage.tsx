@@ -1,10 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { Anime } from "../types/animeType";
 
-type Params = {
-  animeId: string;
-};
-
 const AnimePage = () => {
   const anime: Anime = useLoaderData() as Anime;
 
