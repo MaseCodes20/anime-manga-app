@@ -10,8 +10,11 @@ const MangaPage = () => {
 export default MangaPage;
 
 export const mangaLoader = async (id: string) => {
-  const req = await fetch(`https://api.jikan.moe/v4/manga/${id}`);
-  const res = await req.json();
-
-  return res.data;
+  try {
+    const req = await fetch(`https://api.jikan.moe/v4/manga/${id}`);
+    const res = await req.json();
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
 };

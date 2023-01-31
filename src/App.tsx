@@ -18,6 +18,7 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
+
         <Route
           path="anime/:animeId"
           element={<AnimePage />}

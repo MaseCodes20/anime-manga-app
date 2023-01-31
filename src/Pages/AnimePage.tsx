@@ -70,9 +70,12 @@ const AnimePage = () => {
 
 export default AnimePage;
 
-export const animeLoader = async (id: string): Promise<Anime> => {
-  const req = await fetch(`https://api.jikan.moe/v4/anime/${id}`);
-  const response = await req.json();
-
-  return response.data;
+export const animeLoader = async (id: string) => {
+  try {
+    const req = await fetch(`https://api.jikan.moe/v4/anime/${id}`);
+    const response = await req.json();
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
 };
