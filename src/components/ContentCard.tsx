@@ -1,6 +1,5 @@
-import React from "react";
-import { Aired, Anime, Studio } from "../types/animeType";
-import { Author, Manga } from "../types/mangaType";
+import { Aired, Studio } from "../types/animeType";
+import { Author, Published } from "../types/mangaType";
 import { Demographic, Genre, Images, Theme, Title } from "../types/types";
 
 interface IContentCard {
@@ -27,6 +26,7 @@ type Content = {
   season: string;
   year: number;
   authors: Author[];
+  published: Published;
   studios: Studio[];
   genres: Genre[];
   themes: Theme[];
@@ -34,7 +34,19 @@ type Content = {
 };
 
 const ContentCard = ({ content }: IContentCard) => {
-  const { images, title, type, status, year, synopsis, genres } = content;
+  const {
+    images,
+    title,
+    type,
+    status,
+    year,
+    synopsis,
+    genres,
+    authors,
+    published,
+  } = content;
+
+  const releaseYear = year ?? new Date(published.from).getFullYear();
 
   return (
     <div className="flex items-center justify-between w-full bg-gray-200 rounded-md p-5 mx-5">
@@ -47,9 +59,16 @@ const ContentCard = ({ content }: IContentCard) => {
             <p>{title}</p>
           </div>
 
+          {authors && (
+            <div>
+              <h3 className="font-semibold">Author:</h3>
+              <p>{authors[0].name}</p>
+            </div>
+          )}
+
           <div>
             <h3 className="font-semibold">Year of Release:</h3>
-            <p>{year}</p>
+            <p>{releaseYear}</p>
           </div>
 
           <div>

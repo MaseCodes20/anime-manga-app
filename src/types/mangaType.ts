@@ -34,7 +34,7 @@ export type Manga = {
   external: External[];
 };
 
-type Published = {
+export type Published = {
   from: string;
   to: string;
 };

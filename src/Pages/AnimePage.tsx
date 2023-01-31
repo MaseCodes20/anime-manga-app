@@ -2,7 +2,6 @@ import { useQuery } from "react-query";
 import { useLocation } from "react-router-dom";
 import { fetchAnimeById } from "../api/anime";
 import ContentCard from "../components/ContentCard";
-import { Anime } from "../types/animeType";
 
 const AnimePage = () => {
   const animeId = useLocation().pathname.split("/")[2];
