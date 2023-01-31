@@ -33,5 +33,11 @@ export const fetchAnimesByName = async (search: string) => {
 export const fetchAnimeById = async (id: string) => {
   const response = await axios.get(`${animesBaseURL}/${id}`);
 
-  return response.data;
+  return response.data.data;
+};
+
+export const fetchMangaById = async (id: string) => {
+  const response = await axios.get(`${mangasBaseURL}/${id}`);
+
+  return response.data.data;
 };

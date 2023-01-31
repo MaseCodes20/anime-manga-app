@@ -44,7 +44,7 @@ type TrailerImages = {
   maximum_image_url: string;
 };
 
-type Aired = {
+export type Aired = {
   from: string;
   to: string;
   string: string;
@@ -71,7 +71,7 @@ type Licensor = {
   url: string;
 };
 
-type Studio = {
+export type Studio = {
   mal_id: number;
   type: string;
   name: string;

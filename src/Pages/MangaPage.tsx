@@ -1,20 +1,20 @@
-import { useLoaderData } from "react-router-dom";
-import { Manga } from "../types/mangaType";
+import { useQuery } from "react-query";
+import { useLocation } from "react-router-dom";
+import { fetchMangaById } from "../api/anime";
+import ContentCard from "../components/ContentCard";
 
 const MangaPage = () => {
-  const anime: Manga = useLoaderData() as Manga;
-  console.log(anime.title);
-  return <div>MangaPage</div>;
+  const mangaId = useLocation().pathname.split("/")[2];
+
+  const { data: manga, isSuccess } = useQuery("manga", () =>
+    fetchMangaById(mangaId)
+  );
+
+  return (
+    <div className="flex items-center justify-center h-[calc(100vh-35px)]">
+      {isSuccess && <ContentCard content={manga} />}
+    </div>
+  );
 };
 
 export default MangaPage;
-
-export const mangaLoader = async (id: string) => {
-  try {
-    const req = await fetch(`https://api.jikan.moe/v4/manga/${id}`);
-    const res = await req.json();
-    return res.data;
-  } catch (error) {
-    console.error(error);
-  }
-};

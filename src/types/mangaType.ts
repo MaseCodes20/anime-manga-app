@@ -39,7 +39,7 @@ type Published = {
   to: string;
 };
 
-type Author = {
+export type Author = {
   mal_id: number;
   type: string;
   name: string;
