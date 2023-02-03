@@ -4,23 +4,35 @@ import { fetchAnimesByName, fetchMangasByName } from "../api/anime";
 import SearchResults from "../components/search/SearchResults";
 
 const SearchResultsPage = () => {
-  const serachTerm = useLocation().pathname.split("/")[2];
+  const searchTerm = useLocation().pathname.split("/")[2];
 
   const { data: animes, isSuccess: animeSuccess } = useQuery(
     "searchAnimes",
-    () => fetchAnimesByName(serachTerm)
+    () => fetchAnimesByName(searchTerm)
   );
 
   const { data: mangas, isSuccess: mangaSuccess } = useQuery(
     "SearchMangas",
-    () => fetchMangasByName(serachTerm)
+    () => fetchMangasByName(searchTerm)
   );
 
   return (
     <div>
-      {animeSuccess && <SearchResults contents={animes} title="Animes" />}
+      {animeSuccess && (
+        <SearchResults
+          contents={animes}
+          title="Animes"
+          searchTerm={searchTerm}
+        />
+      )}
 
-      {mangaSuccess && <SearchResults contents={mangas} title="Mangas" />}
+      {mangaSuccess && (
+        <SearchResults
+          contents={mangas}
+          title="Mangas"
+          searchTerm={searchTerm}
+        />
+      )}
     </div>
   );
 };
