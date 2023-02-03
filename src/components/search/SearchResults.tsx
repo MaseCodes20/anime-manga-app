@@ -10,7 +10,7 @@ const SearchResults = ({
   title: string;
 }) => {
   return (
-    <div className="bg-white/75 shadow-md rounded-md m-5 p-5">
+    <div className="bg-white/10 shadow-md rounded-md m-5 p-5">
       <h3 className="mb-3 text-xl font-bold text-center">{title}</h3>
       <div className="grid grid-cols-8 gap-2">
         {contents.map((content: Anime | Manga) => {

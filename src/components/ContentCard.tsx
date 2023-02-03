@@ -49,7 +49,7 @@ const ContentCard = ({ content }: IContentCard) => {
   const releaseYear = year ?? new Date(published?.from).getFullYear();
 
   return (
-    <div className="flex items-center justify-between w-full bg-gray-200 rounded-md p-5 mx-5">
+    <div className="flex items-center justify-between w-full bg-gray-200/20 border-[2px] rounded-md p-5 mx-5">
       <div className="flex items-center">
         <img src={images.jpg.large_image_url} className="max-h-[400px] mr-5" />
 
@@ -89,7 +89,7 @@ const ContentCard = ({ content }: IContentCard) => {
                 return (
                   <div
                     key={genre.mal_id}
-                    className="mr-2 rounded-md p-1 bg-blue-200"
+                    className="mr-2 rounded-md p-1 bg-blue-800/50"
                   >
                     <p>{genre.name}</p>
                   </div>
@@ -102,8 +102,8 @@ const ContentCard = ({ content }: IContentCard) => {
 
       <div className="max-w-[400px] ">
         <h3 className="mb-2 font-semibold">Description</h3>
-        <div className="max-h-[300px] overflow-y-scroll">
-          <p>{synopsis}</p>
+        <div className="max-h-[300px] overflow-y-scroll border-[2px]">
+          <p className="m-2">{synopsis}</p>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ const Animes: FC = () => {
   const { data: animes } = useQuery("animes", fetchAnimes);
 
   return (
-    <div>
+    <div className="border-b-[2px] py-3">
       <Title title="Animes" />
       <Marquee gradient={false} pauseOnHover={true} speed={10}>
         {animes?.data

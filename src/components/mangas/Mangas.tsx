@@ -8,7 +8,7 @@ import Title from "../Title";
 const Mangas = () => {
   const { data: mangas } = useQuery("mangas", fetchMangas);
   return (
-    <div>
+    <div className="border-b-[2px] py-3">
       <Title title="mangas" />
       <Marquee
         direction="right"
