@@ -1,8 +1,12 @@
 import axios from "axios";
 
 const animesBaseURL: string = "https://api.jikan.moe/v4/anime";
+const topAnimesBaseURL: string = "https://api.jikan.moe/v4/top/anime";
 const mangasBaseURL: string = "https://api.jikan.moe/v4/manga";
+const topMangasBaseURL: string = "https://api.jikan.moe/v4/top/manga";
 const genresBaseURL: string = "https://api.jikan.moe/v4/genres/anime";
+
+const limit = 20;
 
 export const fetchAnimes = async () => {
   const response = await axios.get(animesBaseURL);
@@ -35,6 +39,12 @@ export const fetchAnimeById = async (id: string) => {
   return response.data.data;
 };
 
+export const fetchTopAnimes = async (limit: number) => {
+  const response = await axios.get(`${topAnimesBaseURL}?limit=${limit}`);
+
+  return response.data.data;
+};
+
 export const fetchMangaById = async (id: string) => {
   const response = await axios.get(`${mangasBaseURL}/${id}`);
 
@@ -43,6 +53,12 @@ export const fetchMangaById = async (id: string) => {
 
 export const fetchMangasByName = async (search: string) => {
   const response = await axios.get(`${mangasBaseURL}?letter=${search}`);
+
+  return response.data.data;
+};
+
+export const fetchTopMangas = async (limit: number) => {
+  const response = await axios.get(`${topMangasBaseURL}?limit=${limit}`);
 
   return response.data.data;
 };
