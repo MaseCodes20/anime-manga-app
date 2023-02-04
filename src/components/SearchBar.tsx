@@ -19,11 +19,11 @@ const SearchBar = () => {
         name="search"
         id="search"
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="md:w-[600px] h-[30px] text-black pl-3 pb-[2px] mr-3 w-full border-[1px] rounded-full border-gray-500 hover:border-black focus:ring-0 focus:outline-none focus:border-b focus:border-black"
+        className="md:w-[600px] h-[20px] md:h-[30px] text-black pl-3 pb-[2px] mr-3 w-full border-[1px] rounded-full border-gray-500 hover:border-black focus:ring-0 focus:outline-none focus:border-b focus:border-black"
       />
       <button
         type="submit"
-        className="border-[1px] rounded-full text-black border-gray-500 hover:border-black hover:bg-green-500 hover:text-white font-semibold bg-white px-3 py-[2px]"
+        className="border-[1px] text-[10px] md:text-base rounded-full text-black border-gray-500 hover:border-black hover:bg-green-500 hover:text-white font-semibold bg-white px-[4px] py-[2px] md:px-3 md:py-[2px]"
       >
         Search
       </button>

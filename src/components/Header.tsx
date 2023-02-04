@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 h-[35px] z-50 flex items-center justify-between px-5 ${
+      className={`sticky top-0 h-[35px] z-50 flex items-center justify-between px-1 md:px-5 ${
         theme === "light" ? "bg-white" : "bg-black"
       }`}
     >

@@ -10,7 +10,7 @@ const TopContents = ({
   contentType: string;
 }) => {
   return (
-    <div className="flex gap-2 my-3">
+    <div className="grid grid-cols-2 sm:grid-cols-4 md:flex gap-2 my-3">
       {contents?.map((topContent: Anime | Manga) => {
         const { mal_id, images, title, rank } = topContent;
 
@@ -23,7 +23,7 @@ const TopContents = ({
             <img
               src={images.jpg.large_image_url}
               alt={title}
-              className="max-h-[300px]"
+              className="w-full max-h-[300px]"
             />
             <div className="absolute bottom-0 right-0 w-[30px] h-[30px] rounded-full bg-pink-500 flex items-center justify-center mr-1 mb-1">
               <p className="text-white font-semibold">{rank}</p>

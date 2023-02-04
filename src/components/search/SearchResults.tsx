@@ -16,7 +16,7 @@ const SearchResults = ({
       {contents.length >= 1 ? (
         <div className="bg-white/10 shadow-md rounded-md m-5 p-5">
           <h3 className="mb-3 text-xl font-bold text-center">{title}</h3>
-          <div className="grid grid-cols-8 gap-2">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 xl:grid-cols-8 gap-2">
             {contents.map((content: Anime | Manga) => {
               const contentType = content?.type !== "Manga" ? "anime" : "manga";
               return (

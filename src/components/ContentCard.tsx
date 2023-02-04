@@ -49,9 +49,12 @@ const ContentCard = ({ content }: IContentCard) => {
   const releaseYear = year ?? new Date(published?.from).getFullYear();
 
   return (
-    <div className="flex items-center justify-between w-full bg-gray-200/20 border-[2px] rounded-md p-5 mx-5">
-      <div className="flex items-center">
-        <img src={images.jpg.large_image_url} className="max-h-[400px] mr-5" />
+    <div className="lg:flex items-center justify-between w-full bg-gray-200/20 border-[2px] rounded-md p-5 mx-5">
+      <div className="md:flex items-center my-5 mx-5">
+        <img
+          src={images.jpg.large_image_url}
+          className="max-h-[400px] mb-3 md:mb-0 md:mr-5"
+        />
 
         <div>
           <div>
@@ -84,12 +87,12 @@ const ContentCard = ({ content }: IContentCard) => {
           <div>
             <h3 className="font-semibold">Genres:</h3>
 
-            <div className="flex">
+            <div className="grid grid-cols-2 gap-2 xl:flex max-w-[300px]">
               {genres.map((genre) => {
                 return (
                   <div
                     key={genre.mal_id}
-                    className="mr-2 rounded-md p-1 bg-blue-800/50"
+                    className="mr-2 rounded-md p-1 w-fit bg-blue-800/50"
                   >
                     <p>{genre.name}</p>
                   </div>
@@ -100,9 +103,9 @@ const ContentCard = ({ content }: IContentCard) => {
         </div>
       </div>
 
-      <div className="max-w-[400px] ">
+      <div className="max-w-[400px] mx-5">
         <h3 className="mb-2 font-semibold">Description</h3>
-        <div className="max-h-[300px] overflow-y-scroll border-[2px]">
+        <div className="max-h-[300px] max-w-[400px] overflow-y-scroll border-[2px]">
           <p className="m-2">{synopsis}</p>
         </div>
       </div>

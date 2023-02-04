@@ -11,7 +11,7 @@ const AnimePage = () => {
   );
 
   return (
-    <div className="flex items-center justify-center h-[calc(100vh-35px)]">
+    <div className="flex items-center justify-center md:h-[calc(100vh-35px)]">
       {isSuccess && <ContentCard content={anime} />}
     </div>
   );
