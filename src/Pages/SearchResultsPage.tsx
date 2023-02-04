@@ -7,12 +7,12 @@ const SearchResultsPage = () => {
   const searchTerm = useLocation().pathname.split("/")[2];
 
   const { data: animes, isSuccess: animeSuccess } = useQuery(
-    "searchAnimes",
+    `searchAnimes${searchTerm}`,
     () => fetchAnimesByName(searchTerm)
   );
 
   const { data: mangas, isSuccess: mangaSuccess } = useQuery(
-    "SearchMangas",
+    `SearchMangas${searchTerm}`,
     () => fetchMangasByName(searchTerm)
   );
 
