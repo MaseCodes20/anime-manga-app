@@ -21,7 +21,7 @@ const SearchResults = ({
               const contentType = content?.type !== "Manga" ? "anime" : "manga";
               return (
                 <Card
-                  key={content.mal_id}
+                  key={content.mal_id + crypto.randomUUID()}
                   content={content}
                   contentType={contentType}
                 />
