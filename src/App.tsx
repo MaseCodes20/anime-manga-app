@@ -8,9 +8,7 @@ import {
 } from "react-router-dom";
 import Root from "./Pages/Root";
 import Home from "./Pages/Home";
-import AnimePage from "./Pages/AnimePage";
-import MangaPage from "./Pages/MangaPage";
-import SearchResultsPage from "./Pages/SearchResultsPage";
+import { LazyLoadRoutes } from "./routes/LazyLoadRoutes";
 
 const queryClient = new QueryClient();
 
@@ -20,11 +18,20 @@ function App() {
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
 
-        <Route path="anime/:animeId" element={<AnimePage />} />
+        <Route
+          path="anime/:animeId"
+          element={<LazyLoadRoutes componentName="AnimePage" />}
+        />
 
-        <Route path="manga/:animeId" element={<MangaPage />} />
+        <Route
+          path="manga/:animeId"
+          element={<LazyLoadRoutes componentName="MangaPage" />}
+        />
 
-        <Route path="search/:searchTerm" element={<SearchResultsPage />} />
+        <Route
+          path="search/:searchTerm"
+          element={<LazyLoadRoutes componentName="SearchResultsPage" />}
+        />
       </Route>
     )
   );

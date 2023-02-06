@@ -6,8 +6,6 @@ const mangasBaseURL: string = "https://api.jikan.moe/v4/manga";
 const topMangasBaseURL: string = "https://api.jikan.moe/v4/top/manga";
 const genresBaseURL: string = "https://api.jikan.moe/v4/genres/anime";
 
-const limit = 20;
-
 export const fetchAnimes = async () => {
   const response = await axios.get(animesBaseURL);
 
