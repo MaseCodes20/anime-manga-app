@@ -1,6 +1,7 @@
 import { useQuery } from "react-query";
 import { useLocation } from "react-router-dom";
-import { fetchAnimesByName, fetchMangasByName } from "../api/anime";
+import { fetchAnimesByName } from "../api/anime";
+import { fetchMangasByName } from "../api/manga";
 import SearchResults from "../components/search/SearchResults";
 
 const SearchResultsPage = () => {

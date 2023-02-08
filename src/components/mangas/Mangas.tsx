@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { fetchMangas, fetchTopMangas } from "../../api/anime";
+import { fetchMangas, fetchTopMangas } from "../../api/manga";
 import Marquee from "react-fast-marquee";
 import { Manga } from "../../types/mangaType";
 import Card from "../Card";

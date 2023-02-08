@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import { useLocation } from "react-router-dom";
-import { fetchMangaById } from "../api/anime";
+import { fetchMangaById } from "../api/manga";
 import ContentCard from "../components/ContentCard";
 
 const MangaPage = () => {
